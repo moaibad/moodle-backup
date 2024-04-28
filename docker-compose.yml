@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "36402:80"
+    volumes:
+      - ./moodle:/usr/local/apache2/htdocs/moodle
+      - ./moodledata:/var/www/moodledata
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "36103:8081"
