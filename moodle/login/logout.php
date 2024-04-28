@@ -36,7 +36,8 @@ $login   = optional_param('loginpage', 0, PARAM_BOOL);
 if ($login) {
     $redirect = get_login_url();
 } else {
-    $redirect = $CFG->wwwroot.'/';
+    // $redirect = $CFG->wwwroot.'/';
+    $redirect = "http://localhost:3000";
 }
 
 if (!isloggedin()) {

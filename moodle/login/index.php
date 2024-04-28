@@ -27,7 +27,7 @@
 require('../config.php');
 require_once('lib.php');
 
-$SESSION->wantsurl='http://localhost:3000/course/';
+$SESSION->wantsurl='http://localhost:3000';
 
 
 redirect_if_major_upgrade_required();

@@ -88,7 +88,13 @@ class local_colle_external extends external_api {
             $quiz->intro = $intro;
             $quiz->timecreated = time();
             $quiz->overduehandling = "autosubmit";
-	    $quiz->preferredbehaviour = "deferredfeedback";
+	        $quiz->preferredbehaviour = "deferredfeedback";
+            $quiz->grade = 10.0;
+            $quiz->reviewattempt = 69888;
+            $quiz->reviewcorrectness = 4352;
+            $quiz->reviewmaxmarks = 69888;
+            $quiz->reviewmarks = 4352;
+            $quiz->reviewrightanswer = 4352;
             $rqa = $DB->insert_record('quiz', $quiz);
             if (isset($rqa)) {
                 $result = array();
@@ -130,7 +136,7 @@ class local_colle_external extends external_api {
         $qs->firstslot = 1;
         $DB->insert_record('quiz_sections', $qs);
 
-        $host = 'colle.southeastasia.cloudapp.azure.com';
+        $host = 'colle.koreacentral.cloudapp.azure.com';
         $token = '1f95ee6650d2e1a6aa6e152f6bf4702c';
 
         $url = "http://$host/moodle/webservice/rest/server.php?wstoken=$token&wsfunction=core_course_get_contents&moodlewsrestformat=json&courseid=$courseid";
@@ -221,7 +227,7 @@ class local_colle_external extends external_api {
         
         $params = self::validate_parameters(self::get_quiz_parameters(), array('userid' => $userid));
         
-        $url = 'http://colle.southeastasia.cloudapp.azure.com/moodle/webservice/rest/server.php?wstoken=1f95ee6650d2e1a6aa6e152f6bf4702c&wsfunction=core_course_get_contents&moodlewsrestformat=json&courseid=2';
+        $url = 'http://colle.koreacentral.cloudapp.azure.com/moodle/webservice/rest/server.php?wstoken=1f95ee6650d2e1a6aa6e152f6bf4702c&wsfunction=core_course_get_contents&moodlewsrestformat=json&courseid=2';
         $response = file_get_contents($url);
         $data = json_decode($response, true);
 
@@ -302,7 +308,7 @@ class local_colle_external extends external_api {
     public static function get_all_quiz() {
         global $DB;
         
-        $url = 'http://colle.southeastasia.cloudapp.azure.com/moodle/webservice/rest/server.php?wstoken=1f95ee6650d2e1a6aa6e152f6bf4702c&wsfunction=core_course_get_contents&moodlewsrestformat=json&courseid=2';
+        $url = 'http://colle.koreacentral.cloudapp.azure.com/moodle/webservice/rest/server.php?wstoken=1f95ee6650d2e1a6aa6e152f6bf4702c&wsfunction=core_course_get_contents&moodlewsrestformat=json&courseid=2';
         $response = file_get_contents($url);
         $data = json_decode($response, true);
 
@@ -391,7 +397,7 @@ class local_colle_external extends external_api {
      */
     public static function get_all_user_best_grades($userid = 0) {
         global $DB;
-        $host = 'colle.southeastasia.cloudapp.azure.com';
+        $host = 'colle.koreacentral.cloudapp.azure.com';
         $token = '1f95ee6650d2e1a6aa6e152f6bf4702c';
 
         $attempts = $DB->get_records_sql(
@@ -501,7 +507,7 @@ class local_colle_external extends external_api {
      */
     public static function get_user_best_grades_by_quiz($quizid, $userid = 0) {
 
-        $host = 'colle.southeastasia.cloudapp.azure.com';
+        $host = 'colle.koreacentral.cloudapp.azure.com';
         $token = '1f95ee6650d2e1a6aa6e152f6bf4702c';
 
         $url = "http://$host/moodle/webservice/rest/server.php?wstoken=$token&wsfunction=mod_quiz_get_user_attempts&moodlewsrestformat=json&quizid=$quizid&userid=$userid";
@@ -586,7 +592,7 @@ class local_colle_external extends external_api {
      */
     public static function create_course($fullname, $shortname, $enrolmentkey, $summary, $userid) {
         global $DB;
-        $host = 'colle.southeastasia.cloudapp.azure.com';
+        $host = 'colle.koreacentral.cloudapp.azure.com';
         $token = '1f95ee6650d2e1a6aa6e152f6bf4702c';
     
         $fullname_encoded = urlencode($fullname);
