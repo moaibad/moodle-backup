@@ -4,9 +4,10 @@ services:
     image: mysql:8.3.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: "Colle123"
       MYSQL_DATABASE: colle # Specify the name of the database you want to create
       MYSQL_USER: moodlecolle
+      MYSQL_ROOT_PASSWORD: Colle123
+      MYSQL_PASSWORD: Colle123
     ports:
       - "36401:3306"
     volumes:

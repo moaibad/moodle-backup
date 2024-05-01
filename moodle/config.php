@@ -6,19 +6,19 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'mysqli';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = 'localhost';
+$CFG->dbhost    = '194.233.93.124';
 $CFG->dbname    = 'moodle';
-$CFG->dbuser    = 'moodlecolle';
+$CFG->dbuser    = 'root';
 $CFG->dbpass    = 'Colle123.';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
-  'dbport' => '',
+  'dbport' => '36401',
   'dbsocket' => '',
   'dbcollation' => 'utf8mb4_unicode_ci',
 );
 
-$CFG->wwwroot   = 'http://colle.southeastasia.cloudapp.azure.com/moodle';
+$CFG->wwwroot   = 'https://course-colle.agilearn.id';
 $CFG->dataroot  = '/var/www/moodledata';
 $CFG->admin     = 'admin';
 $CFG->disablelogintoken = true;
