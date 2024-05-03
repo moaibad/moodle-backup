@@ -37,25 +37,24 @@ if ($login) {
     $redirect = get_login_url();
 } else {
     // $redirect = $CFG->wwwroot.'/';
-    $redirect = "http://localhost:3000";
+    $redirect = "https://dashboard-colle.agilearn.id";
 }
 
 if (!isloggedin()) {
     // no confirmation, user has already logged out
     require_logout();
     redirect($redirect);
-
 } else if (!confirm_sesskey($sesskey)) {
     $PAGE->set_title(get_string('logout'));
     $PAGE->set_heading($SITE->fullname);
     echo $OUTPUT->header();
-    echo $OUTPUT->confirm(get_string('logoutconfirm'), new moodle_url($PAGE->url, array('sesskey'=>sesskey())), $CFG->wwwroot.'/');
+    echo $OUTPUT->confirm(get_string('logoutconfirm'), new moodle_url($PAGE->url, array('sesskey' => sesskey())), $CFG->wwwroot . '/');
     echo $OUTPUT->footer();
     die;
 }
 
 $authsequence = get_enabled_auth_plugins(); // auths, in sequence
-foreach($authsequence as $authname) {
+foreach ($authsequence as $authname) {
     $authplugin = get_auth_plugin($authname);
     $authplugin->logoutpage_hook();
 }

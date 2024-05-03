@@ -29,7 +29,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
 ';
         $buffer .= $indent . '
 ';
-        $buffer .= $indent . '    <a href="http://localhost:3000/course" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
+        $buffer .= $indent . '    <a href="https://dashboard-colle.agilearn.id/course" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
 ';
         $buffer .= $indent . '
 ';
@@ -37,7 +37,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
         $buffer .= $this->section9f14c48cc0774962c3c438c71ef64fbf($context, $indent, $value);
         $value = $context->findDot('output.should_display_navbar_logo');
         if (empty($value)) {
-            
+
             $buffer .= $indent . '            Back to Dashboard
 ';
         }
@@ -98,7 +98,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
     private function section1880a930791c830b67e23ff34b5a4123(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = 'sitemenubar, admin';
             $result = (string) call_user_func($value, $source, $this->lambdaHelper);
@@ -107,19 +107,19 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 $buffer .= 'sitemenubar, admin';
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
 
     private function sectionB88b20c96dd523877b35fd7e4389a3fd(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = 'sidepanel, core';
             $result = (string) call_user_func($value, $source, $this->lambdaHelper);
@@ -128,19 +128,19 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 $buffer .= 'sidepanel, core';
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
 
     private function section9f14c48cc0774962c3c438c71ef64fbf(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = '
             <img src="{{output.get_compact_logo_url}}" class="logo mr-1" alt="{{sitename}}">
@@ -151,7 +151,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 $buffer .= $indent . '            <img src="';
                 $value = $this->resolveValue($context->findDot('output.get_compact_logo_url'), $context);
                 $buffer .= ($value === null ? '' : call_user_func($this->mustache->getEscape(), $value));
@@ -163,14 +163,14 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
 
     private function section72fd88ebe9426915d0ad316b92ed3ce3(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = '
         <div class="primary-navigation">
@@ -183,7 +183,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 $buffer .= $indent . '        <div class="primary-navigation">
 ';
                 if ($partial = $this->mustache->loadPartial('core/moremenu')) {
@@ -194,14 +194,14 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
 
     private function section4cee876b395813aef31ae2046f214c73(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = '
             {{{ output.search_box }}}
@@ -213,7 +213,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 $buffer .= $indent . '            ';
                 $value = $this->resolveValue($context->findDot('output.search_box'), $context);
                 $buffer .= ($value === null ? '' : $value);
@@ -224,14 +224,14 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
 
     private function section209ab3d4603faba1decb9829d243b621(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = '
             {{> theme_boost/language_menu }}
@@ -243,7 +243,7 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 if ($partial = $this->mustache->loadPartial('theme_boost/language_menu')) {
                     $buffer .= $partial->renderInternal($context, $indent . '            ');
                 }
@@ -252,14 +252,14 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
 
     private function sectionC1a074dbb434be152581dde91d267c63(Mustache_Context $context, $indent, $value)
     {
         $buffer = '';
-    
+
         if (!is_string($value) && is_callable($value)) {
             $source = '
                 {{> core/user_menu }}
@@ -270,15 +270,14 @@ class __Mustache_470b950fdc604af24df6d267cdf74f38 extends Mustache_Template
             $values = $this->isIterable($value) ? $value : array($value);
             foreach ($values as $value) {
                 $context->push($value);
-                
+
                 if ($partial = $this->mustache->loadPartial('core/user_menu')) {
                     $buffer .= $partial->renderInternal($context, $indent . '                ');
                 }
                 $context->pop();
             }
         }
-    
+
         return $buffer;
     }
-
 }
