@@ -62,19 +62,17 @@
         <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
     </button>
 
-    <a href="http://localhost:3000/course" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
+    <a href="http://localhost:3000" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
 
         {{# output.should_display_navbar_logo }}
-            <img src="{{output.get_compact_logo_url}}" class="logo mr-1" alt="{{sitename}}">
+            <img src="{{output.get_compact_logo_url}}" class="logo mr-3" alt="{{sitename}} " width="40" height="40"><b>Back to Dashboard</b>
         {{/ output.should_display_navbar_logo }}
         {{^ output.should_display_navbar_logo }}
-            Back to Dashboard
+            <b>Back to Dashboard</b>
         {{/ output.should_display_navbar_logo }}
     </a>
     {{#primarymoremenu}}
-        <div class="primary-navigation">
-            {{> core/moremenu}}
-        </div>
+
     {{/primarymoremenu}}
 
     <ul class="navbar-nav d-none d-md-flex my-1 px-1">
@@ -83,20 +81,6 @@
     </ul>
 
     <div id="usernavigation" class="navbar-nav ml-auto">
-        {{# output.search_box }}
-            {{{ output.search_box }}}
-            <div class="divider border-left h-75 align-self-center mx-1"></div>
-        {{/output.search_box}}
-        {{#langmenu}}
-            {{> theme_boost/language_menu }}
-            <div class="divider border-left h-75 align-self-center mx-1"></div>
-        {{/langmenu}}
-        {{{ output.navbar_plugin_output }}}
-        <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
-            {{#usermenu}}
-                {{> core/user_menu }}
-            {{/usermenu}}
-        </div>
         {{{ output.edit_switch }}}
     </div>
 </nav>
